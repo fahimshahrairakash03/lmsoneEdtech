@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -27,40 +28,46 @@ const Header = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+              <Link to="/course">
+                <li>
+                  <a className="text-black text-lg">Courses</a>
+                </li>
+              </Link>
+              <Link to="/faq">
+                <li>
+                  <a className="text-black text-lg">Faq</a>
+                </li>
+              </Link>
+              <Link to="/blog">
+                <li>
+                  <a className="text-black text-lg">Blog</a>
+                </li>
+              </Link>
             </ul>
           </div>
           {/* <a className="btn btn-ghost text-xl">daisyUI</a> */}
-          <img src={logo} alt="" />
+          <Link to="/">
+            <img src={logo} alt="" />
+          </Link>
           <img src="" alt="" />
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 ">
-            <li>
-              <a className="text-black text-lg">Courses</a>
-            </li>
-            <li>
-              <a className="text-black text-lg">Faq</a>
-            </li>
-            <li>
-              <a className="text-black text-lg">Blog</a>
-            </li>
+            <Link to="/course">
+              <li>
+                <a className="text-black text-lg">Courses</a>
+              </li>
+            </Link>
+            <Link to="/faq">
+              <li>
+                <a className="text-black text-lg">Faq</a>
+              </li>
+            </Link>
+            <Link to="/blog">
+              <li>
+                <a className="text-black text-lg">Blog</a>
+              </li>
+            </Link>
           </ul>
         </div>
         <div className="navbar-end">
