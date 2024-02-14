@@ -1,18 +1,15 @@
 import React from "react";
 import Lottie from "lottie-react";
 import education from "../../assets/lottie/education.json";
+import CourseCategory from "../CourseCategory/CourseCategory";
 
 const Courses = () => {
   return (
-    <div>
-      <h1 style={{ position: "absolute", top: "50", rigth: "50" }}>
-        Here Are Courses
-      </h1>
-      <Lottie
-        style={{ height: "60px" }}
-        animationData={education}
-        loop={true}
-      />
+    <div className="grid grid-cols-2 ">
+      <div className="p-4">
+        <CourseCategory></CourseCategory>
+      </div>
+      <div>asdasdasd</div>
     </div>
   );
 };
