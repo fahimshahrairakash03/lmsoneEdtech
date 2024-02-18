@@ -21,8 +21,10 @@ const ContentCard = ({ content }) => {
           <p>{details.slice(0, 150)}. . .</p>
           <div className="card-actions justify-center mt-3">
             <button
-              style={{ width: "200px" }}
-              className="transition ease-in-out delay-150 bg-green-500 hover:-translate-y-1 hover:scale-110 hover:bg-green-700 duration-300 ..."
+              style={{
+                width: "200px",
+              }}
+              className=" font-bold transition ease-in-out delay-150 text-xl hover:text-white  hover:-translate-y-1 bg-gradient-to-r from-green-400 to-blue-500 hover:from-indigo-500 hover:to-purple-500 ..."
             >
               Details
             </button>

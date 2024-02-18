@@ -21,6 +21,31 @@ const Header = () => {
     document.querySelector("html").setAttribute("data-theme", localTheme);
   }, [theme]);
 
+  const menuItems = (
+    <>
+      <Link to="/course">
+        <li>
+          <a className="text-black text-lg">COURSES</a>
+        </li>
+      </Link>
+      <Link to="/faq">
+        <li>
+          <a className="text-black text-lg">FAQ</a>
+        </li>
+      </Link>
+      <Link to="/blog">
+        <li>
+          <a className="text-black text-lg">BLOG</a>
+        </li>
+      </Link>
+      <Link to="/login">
+        <li>
+          <a className="text-black text-lg">LOGIN</a>
+        </li>
+      </Link>
+    </>
+  );
+
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -46,21 +71,7 @@ const Header = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-56"
             >
-              <Link to="/course">
-                <li>
-                  <a className="text-black text-lg">Courses</a>
-                </li>
-              </Link>
-              <Link to="/faq">
-                <li>
-                  <a className="text-black text-lg">Faq</a>
-                </li>
-              </Link>
-              <Link to="/blog">
-                <li>
-                  <a className="text-black text-lg">Blog</a>
-                </li>
-              </Link>
+              {menuItems}
               <div>
                 <CourseCategory></CourseCategory>
               </div>
@@ -73,23 +84,7 @@ const Header = () => {
           <img src="" alt="" />
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 ">
-            <Link to="/course">
-              <li>
-                <a className="text-black text-lg">Courses</a>
-              </li>
-            </Link>
-            <Link to="/faq">
-              <li>
-                <a className="text-black text-lg">Faq</a>
-              </li>
-            </Link>
-            <Link to="/blog">
-              <li>
-                <a className="text-black text-lg">Blog</a>
-              </li>
-            </Link>
-          </ul>
+          <ul className="menu menu-horizontal px-1 ">{menuItems}</ul>
         </div>
         <div className="navbar-end">
           <a className="btn">Button</a>
