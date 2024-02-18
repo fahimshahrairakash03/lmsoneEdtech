@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
+import CourseCategory from "../CourseCategory/CourseCategory";
 
 const Header = () => {
   localStorage.setItem("theme", "light");
@@ -43,7 +44,7 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-56"
             >
               <Link to="/course">
                 <li>
@@ -60,6 +61,9 @@ const Header = () => {
                   <a className="text-black text-lg">Blog</a>
                 </li>
               </Link>
+              <div>
+                <CourseCategory></CourseCategory>
+              </div>
             </ul>
           </div>
           {/* <a className="btn btn-ghost text-xl">daisyUI</a> */}

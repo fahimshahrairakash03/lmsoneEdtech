@@ -10,8 +10,8 @@ const Courses = () => {
   return (
     <div>
       <Header></Header>
-      <div className="grid grid-cols-3 ">
-        <div className="p-4">
+      <div className="lg:grid lg:grid-cols-3 ">
+        <div className="p-4 hidden lg:block">
           <CourseCategory></CourseCategory>
         </div>
         <div className="col-span-2">

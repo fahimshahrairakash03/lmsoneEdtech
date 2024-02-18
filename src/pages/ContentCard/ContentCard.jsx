@@ -3,9 +3,9 @@ import React from "react";
 const ContentCard = ({ content }) => {
   const { details, title, image_url, _id } = content;
   return (
-    <div className="ml-20 mt-8  ">
+    <div className="lg:ml-20 m-4 mt-8  ">
       <div
-        style={{ height: "450px", width: "500px" }}
+        style={{ height: "450px", width: "400px" }}
         className="card card-compact w-96 bg-base-100 shadow-xl "
       >
         <figure>
