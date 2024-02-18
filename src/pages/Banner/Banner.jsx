@@ -28,12 +28,24 @@ const Banner = () => {
             </h1>
 
             <Link to="/course">
-              <button className="btn btn-outline btn-secondary me-4">
+              <button
+                style={{
+                  backgroundImage:
+                    "linear-gradient(90deg, #11998e 0%, #38ef7d 100%)",
+                }}
+                className="btn text-white w-36 font-bold lg:me-4 hover:-translate-y-1 hover:scale-110 duration-300 "
+              >
                 Start Learning
               </button>
             </Link>
             <Link>
-              <button className="btn btn-outline btn-accent">
+              <button
+                style={{
+                  backgroundImage:
+                    "linear-gradient(90deg, #c94b4b 0%, #4b134f 100%)",
+                }}
+                className="btn text-white w-36  mt-2 hover:-translate-y-1 hover:scale-110 duration-300 "
+              >
                 Join Us Free
               </button>
             </Link>
