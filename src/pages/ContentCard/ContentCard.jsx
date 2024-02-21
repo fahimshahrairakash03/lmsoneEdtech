@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ContentCard = ({ content }) => {
   const { details, title, image_url, _id } = content;
@@ -20,14 +21,16 @@ const ContentCard = ({ content }) => {
           <h2 className="card-title">{title}</h2>
           <p>{details.slice(0, 150)}. . .</p>
           <div className="card-actions justify-center mt-3">
-            <button
-              style={{
-                width: "200px",
-              }}
-              className=" font-bold transition ease-in-out delay-150 text-xl hover:text-white  hover:-translate-y-1 bg-gradient-to-r from-green-400 to-blue-500 hover:from-indigo-500 hover:to-purple-500 ..."
-            >
-              Details
-            </button>
+            <Link to={`/courseDetails/${_id}`}>
+              <button
+                style={{
+                  width: "200px",
+                }}
+                className=" font-bold transition ease-in-out delay-150 text-xl hover:text-white  hover:-translate-y-1 bg-gradient-to-r from-green-400 to-blue-500 hover:from-indigo-500 hover:to-purple-500 ..."
+              >
+                Details
+              </button>
+            </Link>
           </div>
         </div>
       </div>

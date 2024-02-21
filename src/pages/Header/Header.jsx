@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import CourseCategory from "../CourseCategory/CourseCategory";
+import { AuthContext } from "../../context/AuthProvider";
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   localStorage.setItem("theme", "light");
   const { theme, setTheme } = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
@@ -38,11 +41,26 @@ const Header = () => {
           <a className="text-black text-lg">BLOG</a>
         </li>
       </Link>
-      <Link to="/login">
-        <li>
-          <a className="text-black text-lg">LOGIN</a>
-        </li>
-      </Link>
+      {user?.uid ? (
+        <Link
+          className="rounded"
+          style={{
+            backgroundImage: "linear-gradient(90deg, #007991 0%, #78ffd6 100%)",
+          }}
+        >
+          <li>
+            <a className="text-black text-lg font-extrabold hover:text-black">
+              LOGOUT
+            </a>
+          </li>
+        </Link>
+      ) : (
+        <Link to="/login">
+          <li>
+            <a className="text-black text-lg">LOGIN</a>
+          </li>
+        </Link>
+      )}
     </>
   );
 

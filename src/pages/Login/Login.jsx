@@ -21,8 +21,8 @@ const Login = () => {
       .then((error) => console.log(error));
   };
   return (
-    <div>
-      <div className="hero py-10 bg-base-200">
+    <div className="">
+      <div className="hero py-10 ">
         <div className="hero-content flex-col lg:flex-row">
           <div className="text-center w-1/2  lg:text-left">
             <h1 className="text-5xl font-bold pb-6 lg:pb-0">Login now!</h1>
@@ -33,7 +33,7 @@ const Login = () => {
               loop={true}
             />
           </div>
-          <div className="w-1/2 card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="w-1/2 card shrink-0 w-full max-w-sm shadow-2xl ">
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
