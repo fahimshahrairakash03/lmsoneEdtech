@@ -6,6 +6,7 @@ import { AuthContext } from "../../context/AuthProvider";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+
   console.log(user);
   localStorage.setItem("theme", "light");
   const { theme, setTheme } = useState(
