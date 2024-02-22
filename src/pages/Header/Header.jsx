@@ -5,7 +5,7 @@ import CourseCategory from "../CourseCategory/CourseCategory";
 import { AuthContext } from "../../context/AuthProvider";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   console.log(user);
   localStorage.setItem("theme", "light");
   const { theme, setTheme } = useState(
@@ -23,6 +23,12 @@ const Header = () => {
     const localTheme = localStorage.getItem("theme");
     document.querySelector("html").setAttribute("data-theme", localTheme);
   }, [theme]);
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((e) => console.log(e));
+  };
 
   const menuItems = (
     <>
@@ -43,6 +49,7 @@ const Header = () => {
       </Link>
       {user?.uid ? (
         <Link
+          onClick={handleLogout}
           className="rounded"
           style={{
             backgroundImage: "linear-gradient(90deg, #007991 0%, #78ffd6 100%)",
@@ -55,9 +62,17 @@ const Header = () => {
           </li>
         </Link>
       ) : (
-        <Link to="/login">
+        <Link
+          className="rounded"
+          style={{
+            backgroundImage: "linear-gradient(90deg, #007991 0%, #78ffd6 100%)",
+          }}
+          to="/login"
+        >
           <li>
-            <a className="text-black text-lg">LOGIN</a>
+            <a className="text-black text-lg font-extrabold hover:text-black">
+              LOGIN
+            </a>
           </li>
         </Link>
       )}
@@ -104,8 +119,18 @@ const Header = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 ">{menuItems}</ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div className="navbar-end ml-10 lg:ml-0">
+          {/* <a className="btn">Button</a> */}
+          {user?.uid && (
+            <>
+              <p className="me-3">{user.email.slice(0, 10)}...</p>
+              <div className="avatar tooltip" data-tip={`${user?.email}`}>
+                <div className="w-7 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <img src={user.photoURL} />
+                </div>
+              </div>
+            </>
+          )}
         </div>
         <div className="navbar-end h-0.5 ">
           <label className="swap swap-rotate">

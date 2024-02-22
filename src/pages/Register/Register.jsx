@@ -3,9 +3,12 @@ import login from "../../assets/lottie/login.json";
 import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
+import google from "../../assets/images/google.png";
+import { FcGoogle } from "react-icons/fc";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, googleSignIn } = useContext(AuthContext);
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -20,6 +23,17 @@ const Register = () => {
       })
       .then((error) => console.log(error));
   };
+
+  const handleGoogleSignin = () => {
+    const googleProvider = new GoogleAuthProvider();
+    googleSignIn(googleProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div>
       <div className="hero py-10 ">
@@ -79,6 +93,19 @@ const Register = () => {
                   value="Register"
                   className="btn btn-primary"
                 />
+              </div>
+              <div className="form-control mt-2">
+                <button
+                  onClick={handleGoogleSignin}
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(90deg, #f5f7fa 0%, #c3cfe2 100%)",
+                  }}
+                  className="  btn  text-md hover:text-green-900"
+                >
+                  <FcGoogle />
+                  Signin With Google
+                </button>
               </div>
             </form>
             <p className="text-center">

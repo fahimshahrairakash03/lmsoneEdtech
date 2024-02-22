@@ -2,6 +2,7 @@ import React from "react";
 import Lottie from "lottie-react";
 import education from "../../assets/lottie/education.json";
 import { Link } from "react-router-dom";
+import { TypeAnimation } from "react-type-animation";
 
 const Banner = () => {
   return (
