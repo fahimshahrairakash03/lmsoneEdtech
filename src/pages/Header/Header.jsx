@@ -51,7 +51,7 @@ const Header = () => {
       {user?.uid ? (
         <Link
           onClick={handleLogout}
-          className="rounded"
+          className="rounded "
           style={{
             backgroundImage: "linear-gradient(90deg, #007991 0%, #78ffd6 100%)",
           }}
@@ -64,14 +64,14 @@ const Header = () => {
         </Link>
       ) : (
         <Link
-          className="rounded"
+          className="rounded "
           style={{
             backgroundImage: "linear-gradient(90deg, #007991 0%, #78ffd6 100%)",
           }}
           to="/login"
         >
           <li>
-            <a className="text-black text-lg font-extrabold hover:text-black">
+            <a className="text-gray-700 text-lg font-extrabold hover:text-black">
               LOGIN
             </a>
           </li>
@@ -120,7 +120,7 @@ const Header = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 ">{menuItems}</ul>
         </div>
-        <div className="navbar-end ml-10 lg:ml-0">
+        <div className="navbar-center ml-10 lg:ml-0">
           {/* <a className="btn">Button</a> */}
           {user?.uid && (
             <>
