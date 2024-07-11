@@ -26,7 +26,7 @@ const ContentCard = ({ content }) => {
                 style={{
                   width: "200px",
                 }}
-                className=" font-bold transition ease-in-out delay-150 text-xl hover:text-white  hover:-translate-y-1 bg-gradient-to-r from-green-400 to-blue-500 hover:from-indigo-500 hover:to-purple-500 ..."
+                className=" font-bold transition ease-in-out delay-150 text-xl text-white hover:-translate-y-1 bg-gradient-to-r from-green-400 to-blue-500 hover:from-indigo-500 hover:to-purple-500 ..."
               >
                 Details
               </button>

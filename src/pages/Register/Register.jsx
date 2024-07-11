@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import login from "../../assets/lottie/login.json";
 import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
@@ -6,8 +6,10 @@ import { AuthContext } from "../../context/AuthProvider";
 import google from "../../assets/images/google.png";
 import { FcGoogle } from "react-icons/fc";
 import { GoogleAuthProvider } from "firebase/auth";
+import toast from "react-hot-toast";
 
 const Register = () => {
+  const [errors, setErrors] = useState("");
   const { createUser, googleSignIn } = useContext(AuthContext);
   const handleRegister = (e) => {
     e.preventDefault();
@@ -19,9 +21,13 @@ const Register = () => {
       .then((res) => {
         const user = res.user;
         console.log(user);
+        toast.success("Successfully Registered");
         form.reset();
       })
-      .then((error) => console.log(error));
+      .then((error) => {
+        console.log(error);
+        setErrors(error);
+      });
   };
 
   const handleGoogleSignin = () => {
@@ -87,6 +93,7 @@ const Register = () => {
                   required
                 />
               </div>
+              <p className="text-sm font-semibold text-red-800">{errors}</p>
               <div className="form-control mt-6">
                 <input
                   type="submit"

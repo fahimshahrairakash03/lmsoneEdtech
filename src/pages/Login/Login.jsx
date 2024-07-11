@@ -4,6 +4,7 @@ import Lottie from "lottie-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import { Result } from "postcss";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const { loginUser } = useContext(AuthContext);
@@ -21,6 +22,8 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        toast.success("Successfully Login");
+
         form.reset();
         navigate(from, { replace: true });
       })
