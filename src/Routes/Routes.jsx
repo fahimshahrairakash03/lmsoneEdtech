@@ -43,7 +43,9 @@ export const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/courseDetails/${params.id}`),
+          fetch(
+            `https://lmsone-edtech-server.vercel.app/courseDetails/${params.id}`
+          ),
       },
     ],
   },
@@ -56,12 +58,12 @@ export const routes = createBrowserRouter([
         path: "/course/content/:id",
         element: <CourseContents></CourseContents>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/courses/${params.id}`),
+          fetch(`https://lmsone-edtech-server.vercel.app/courses/${params.id}`),
       },
       {
         path: "/course",
         element: <AllCourses></AllCourses>,
-        loader: () => fetch("http://localhost:5000/contents"),
+        loader: () => fetch("https://lmsone-edtech-server.vercel.app/contents"),
       },
     ],
   },

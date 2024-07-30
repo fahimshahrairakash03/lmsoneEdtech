@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const CourseCategory = () => {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/courses")
+    fetch("https://lmsone-edtech-server.vercel.app/courses")
       .then((res) => res.json())
       .then((data) => setCourses(data));
   }, []);
@@ -20,7 +20,7 @@ const CourseCategory = () => {
                 backgroundImage:
                   "linear-gradient(90deg, #be93c5 0%, #7bc6cc 100%)",
               }}
-              className="btn btn-active font-extrabold  bg-violet-800 hover:translate-x-3 text-white hover:bg-violet-600 mt-5 btn-accent"
+              className="btn btn-active font-extrabold  bg-violet-800 hover:translate-x-3 text-white  mt-5 btn-accent"
             >
               {course.name}
             </button>

@@ -3,7 +3,7 @@ import { TypeAnimation } from "react-type-animation";
 
 const Faq = () => {
   return (
-    <div>
+    <div className="text-center">
       <TypeAnimation
         style={{
           whiteSpace: "pre-line",
@@ -12,9 +12,9 @@ const Faq = () => {
           display: "block",
         }}
         sequence={[
-          `Line one\nLine Two\nLine Three\nLine Four\nLine Five
+          `How To enroll in Courses?\nWhat is the payment system?\nWhat is the refund policy?\nHow long the courses will be conducted?\nWho are the instructors?
     
-Line Seven`, // actual line-break inside string literal also gets animated in new line, but ensure there are no leading spaces
+Let's Enjoy The Whole Journey`, // actual line-break inside string literal also gets animated in new line, but ensure there are no leading spaces
           1000,
           "",
         ]}
