@@ -21,35 +21,37 @@ const Banner = () => {
             />
           </div>
           <div className="w-1/2 text-center">
-            <h1 className="font-extrabold lg:text-6xl mb-5">
+            <h1 className="lg:font-extrabold md:font-extrabold sm:font-semibold sm:text-sm md:text-4xl lg:text-6xl   mb-5">
               {" "}
               Start Learning <br />
               and explore your <br />
               Top Subject
             </h1>
 
-            <Link to="/course">
-              <button
-                style={{
-                  backgroundImage:
-                    "linear-gradient(90deg, #11998e 0%, #38ef7d 100%)",
-                }}
-                className="btn text-white w-36 font-bold lg:me-4 hover:-translate-y-1 hover:scale-110 duration-300 "
-              >
-                Start Learning
-              </button>
-            </Link>
-            <Link>
-              <button
-                style={{
-                  backgroundImage:
-                    "linear-gradient(90deg, #c94b4b 0%, #4b134f 100%)",
-                }}
-                className="btn text-white w-36  mt-2 hover:-translate-y-1 hover:scale-110 duration-300 "
-              >
-                Join Us Free
-              </button>
-            </Link>
+            <div className=" ">
+              <Link to="/course">
+                <button
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(90deg, #11998e 0%, #38ef7d 100%)",
+                  }}
+                  className="btn text-white w-36 font-bold lg:me-4 hover:-translate-y-1 hover:scale-110 duration-300 "
+                >
+                  Start Learning
+                </button>
+              </Link>
+              <Link>
+                <button
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(90deg, #c94b4b 0%, #4b134f 100%)",
+                  }}
+                  className="btn text-white w-36  mt-2 hover:-translate-y-1 hover:scale-110 duration-300 "
+                >
+                  Join Us Free
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
